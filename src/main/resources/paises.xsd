@@ -1,0 +1,39 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://localhost:8081/ws"
+           targetNamespace="http://localhost:8081/ws" elementFormDefault="qualified">
+
+    <!--metodos-->
+    <xs:element name="obtenerPaisRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="obtenerPaisResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="pais" type="tns:pais"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Objetos(clases): -->
+    <xs:complexType name="pais">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="capital" type="xs:string"/>
+            <xs:element name="moneda" type="tns:moneda"/>
+            <xs:element name="poblacion" type="xs:int"/>
+            <xs:element name="bandera" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="moneda">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ARS"/>
+            <xs:enumeration value="COP"/>
+            <xs:enumeration value="DOL"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
