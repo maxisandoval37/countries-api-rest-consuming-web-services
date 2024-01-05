@@ -1,4 +1,4 @@
-package dev.maxisandoval.countriesapirestconsumingwebservices.webservice.soap.apirest;
+package dev.maxisandoval.countriesapirestconsumingwebservices.webservice.apirest;
 
 import dev.maxisandoval.countriesapirestconsumingwebservices.model.apiResponse.CountryData;
 import org.springframework.http.MediaType;
