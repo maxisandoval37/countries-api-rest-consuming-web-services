@@ -18,7 +18,7 @@ public class PaisSoapConfiguration {
     @Bean
     public PaisSoapClient paisSoapClient (Jaxb2Marshaller marshaller) {
         PaisSoapClient client = new PaisSoapClient();
-        client.setDefaultUri("http://localhost:8081/ws");
+        client.setDefaultUri("https://soap-paises.onrender.com/ws");
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
 

@@ -79,7 +79,7 @@
 				<configuration>
 					<packageName>localhost.ws</packageName>
 					<wsdlUrls>
-						<wsdlUrl>http://localhost:8081/ws/paises.wsdl</wsdlUrl>
+						<wsdlUrl>https://soap-paises.onrender.com/ws/paises.wsdl</wsdlUrl>
 					</wsdlUrls>
 					<sourceDestDir>${sourcesDir}</sourceDestDir>
 					<destDir>${classesDir}</destDir>

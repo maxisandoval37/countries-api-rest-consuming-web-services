@@ -10,7 +10,7 @@ import org.springframework.ws.soap.client.core.SoapActionCallback;
 public class PaisSoapClient extends WebServiceGatewaySupport {
 
     private static final Logger log = LoggerFactory.getLogger(PaisSoapClient.class);
-    private static final String baseUrl = "http://localhost:8081/ws";
+    private static final String baseUrl = "https://soap-paises.onrender.com/ws";
 
     public ObtenerPaisResponse obtenerPais (String pais) {
         ObtenerPaisRequest request = new ObtenerPaisRequest();
