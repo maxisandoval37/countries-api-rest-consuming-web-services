@@ -36,6 +36,36 @@ public class PaisControllerTest {
     private static final String NOMBRE_PAIS = "Argentina";
 
     @Test
+    void testObtenerPaisSOAPyAPIDisponibles() {//Ambos servicios webs
+        ObtenerPaisResponse soapResponse = new ObtenerPaisResponse();
+        Pais paisSOAPAux = construirPaisMockSoap();
+        soapResponse.setPais(paisSOAPAux);
+
+        CountryData paisAPIAux = construirPaisMockApiRest();
+        CountryData apiResponse = new CountryData();
+        apiResponse.setLanguages(paisAPIAux.getLanguages());
+        apiResponse.setMaps(paisAPIAux.getMaps());
+
+        when(paisSoapClient.obtenerPais(any())).thenReturn(soapResponse);
+        when(paisRestService.obtenerPaisInfoApi(any())).thenReturn(apiResponse);
+
+        PaisDTO result = paisController.obtenerPais(paisSOAPAux.getNombre());
+
+        verify(paisSoapClient, times(1)).obtenerPais(paisSOAPAux.getNombre());
+        verify(paisRestService, times(1)).obtenerPaisInfoApi(paisSOAPAux.getNombre());
+
+        assertAll(
+                () -> assertEquals(paisSOAPAux.getNombre(), result.getNombre()),
+                () -> assertEquals(paisSOAPAux.getCapital(), result.getCapital()),
+                () -> assertEquals(paisSOAPAux.getMoneda(), result.getMoneda()),
+                () -> assertEquals(paisSOAPAux.getPoblacion(), result.getPoblacion()),
+                () -> assertEquals(paisSOAPAux.getBandera(), result.getBandera()),
+                () -> assertEquals(paisAPIAux.getLanguages(), result.getLenguajes()),
+                () -> assertEquals(paisAPIAux.getMaps(), result.getMapas())
+        );
+    }
+
+    @Test
     void testObtenerPaisSOAPDisponible() {
         ObtenerPaisResponse soapResponse = new ObtenerPaisResponse();
         Pais paisSOAPAux = construirPaisMockSoap();
