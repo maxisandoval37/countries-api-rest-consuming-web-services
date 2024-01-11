@@ -34,6 +34,26 @@
             <xs:enumeration value="ARS"/>
             <xs:enumeration value="COP"/>
             <xs:enumeration value="DOL"/>
+            <xs:enumeration value="MXN"/>
+            <xs:enumeration value="BRL"/>
+            <xs:enumeration value="CLP"/>
+            <xs:enumeration value="PEN"/>
+            <xs:enumeration value="VEF"/>
+            <xs:enumeration value="DZD"/>
+            <xs:enumeration value="BOB"/>
+            <xs:enumeration value="UYU"/>
+            <xs:enumeration value="PYG"/>
+            <xs:enumeration value="GTQ"/>
+            <xs:enumeration value="HNL"/>
+            <xs:enumeration value="PAB"/>
+            <xs:enumeration value="CRC"/>
+            <xs:enumeration value="NIO"/>
+            <xs:enumeration value="SVC"/>
+            <xs:enumeration value="BZD"/>
+            <xs:enumeration value="CUP"/>
+            <xs:enumeration value="GYD"/>
+            <xs:enumeration value="SRD"/>
+            <xs:enumeration value="EUR"/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>
