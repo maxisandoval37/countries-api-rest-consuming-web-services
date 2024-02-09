@@ -1,11 +1,10 @@
 package dev.maxisandoval.countriesapirestconsumingwebservices.model;
 
 import localhost.ws.Moneda;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import java.util.Map;
 
+@Builder
 @Data //toString, equals, hashcode, getters y setters
 @NoArgsConstructor
 @AllArgsConstructor

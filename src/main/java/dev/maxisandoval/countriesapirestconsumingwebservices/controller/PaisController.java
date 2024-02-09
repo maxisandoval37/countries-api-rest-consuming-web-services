@@ -56,27 +56,25 @@ public class PaisController {
     }
 
     private PaisDTO construirPaisDTO(ObtenerPaisResponse soapResponse, CountryData apiResponse){
-        PaisDTO paisDTO = new PaisDTO();
+        PaisDTO.PaisDTOBuilder builder = PaisDTO.builder();
 
         if (soapResponse != null) {
-            paisDTO.setNombre(soapResponse.getPais().getNombre());
-            paisDTO.setCapital(soapResponse.getPais().getCapital());
-            paisDTO.setMoneda(soapResponse.getPais().getMoneda());
-            paisDTO.setPoblacion(soapResponse.getPais().getPoblacion());
-            paisDTO.setBandera(soapResponse.getPais().getBandera());
-        }
-        else {
+            builder.nombre(soapResponse.getPais().getNombre())
+                    .capital(soapResponse.getPais().getCapital())
+                    .moneda(soapResponse.getPais().getMoneda())
+                    .poblacion(soapResponse.getPais().getPoblacion())
+                    .bandera(soapResponse.getPais().getBandera());
+        } else {
             log.error("La respuesta del SOAP es nula");
         }
 
         if (apiResponse != null) {
-            paisDTO.setLenguajes(apiResponse.getLanguages());
-            paisDTO.setMapas(apiResponse.getMaps());
-        }
-        else {
+            builder.lenguajes(apiResponse.getLanguages())
+                    .mapas(apiResponse.getMaps());
+        } else {
             log.error("La respuesta de la API es nula");
         }
 
-        return paisDTO;
+        return builder.build();
     }
 }
