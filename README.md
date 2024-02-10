@@ -61,6 +61,25 @@ El endpoint principal de la aplicación se encuentra en:
 
 `/contriesapi/obtenerPais?nombre=argentina`
 
+## Ejemplo de Response
+
+```json
+{
+  "nombre": "argentina",
+  "capital": "Cuidad Autonoma de Buenos Aires",
+  "moneda": "ARS",
+  "poblacion": 46234830,
+  "bandera": "https://flagcdn.com/w2560/ar.png",
+  "lenguajes": {
+    "spa": "Spanish"
+  },
+  "mapas": {
+    "googleMaps": "https://goo.gl/maps/Z9DXNxhf2o93kvyc6",
+    "openStreetMaps": "https://www.openstreetmap.org/relation/286393"
+  }
+}
+```
+
 ## Live Demo
 
 [onrender.com](https://countries-api-rest.onrender.com/contriesapi/obtenerPais?nombre=argentina)
